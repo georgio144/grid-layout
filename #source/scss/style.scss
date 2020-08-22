@@ -1,0 +1,17 @@
+@import "nullstyle.scss";
+
+.grid {
+   //свойства first line и first letter не будут применяться к дочерним элементам
+   display: grid; //свойства float и clear будут игнорироваться
+   font-size: 30px;
+   padding: 20px;
+   background-color: lightblue;
+   margin: 0 0 20px 0;
+}
+.grid-inline {
+   //свойства first line и first letter не будут применяться к дочерним элементам
+   display: inline-grid; //свойства float и clear будут игнорироваться
+   font-size: 30px;
+   padding: 20px;
+   background-color: lightpink;
+}
