@@ -1,1 +1,90 @@
 @import "nullstyle";
+
+body {
+   max-width: 1200px;
+   margin: 0 auto;
+}
+
+.wrapper {
+}
+
+.grid {
+   position: relative;
+}
+.grid-body {
+   display: grid;
+   grid-template: repeat(2, 1fr) / repeat(3, 1fr); //эта запись эквивалентна двум строкам ниже (сначала указываем значение для рядов)
+   /* grid-template-columns: repeat(3, 1fr); //можно указывать в процентнах или комбинировать с px
+   grid-template-rows: repeat (2fr, 1fr); //для grid layout сущ-т своя ед-ца изм-я наз-ся fr */
+   padding: 30px;
+   font-size: 30px;
+}
+//fit-content это тоже самое что и auto, но здесь мы можем ограничить макс width
+//свойство repeat(1значение ук-т на кло-во колонок, 2-е св-во на размер)
+
+.grid-item {
+   text-align: center;
+   border: 2px dashed lightcoral;
+}
+/*имена областей*/
+.grid-wrapper {
+   display: grid;
+   grid-template: [start] "header header" 100px [row2] //короткая запись
+      [row2] "side content" 1fr [row-end] / 150px 1fr;
+   /*  grid-template-columns: 150px 1fr;   //длинная запись
+   grid-template-rows: 100px 1fr;
+   grid-template-areas:
+      "header header"
+      "side content";*/
+}
+.grid-header {
+   grid-area: header;
+}
+
+.grid-side {
+   grid-area: side;
+}
+
+.grid-header,
+.grid-side,
+.grid-content {
+   grid-area: content;
+   padding: 30px;
+   border: 2px dashed lightcoral;
+   margin: 0 0 15px 0;
+   font-size: 30px;
+}
+
+/*неявная сетка*/
+
+.none-wrapper {
+   display: grid;
+   grid-template: 1fr 1fr / repeat(3, 1fr);
+   grid-auto-rows: 200px; //задаем высоту неявного ряда
+   grid-auto-columns: 300px; // указываем, если у нас совсем не задана явная
+}
+.none-grid {
+   text-align: center;
+   border: 2px dashed lightcoral;
+   padding: 30px;
+   font-size: 30px;
+}
+
+/*автоматическое размещение*/
+
+.grid-masonrybody {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-auto-rows: 200px;
+   grid-auto-flow: dense;
+}
+.masonry-item_5,
+.masonry-item {
+   text-align: center;
+   border: 2px dashed lightcoral;
+   font-size: 30px;
+}
+.masonry-item_5 {
+   grid-column: span 2;
+   grid-row: span 2;
+}
