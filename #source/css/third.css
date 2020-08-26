@@ -89,3 +89,124 @@ h6 {
 }
 
 /*------------------------------------------------------------------------*/
+body {
+  background-color: black;
+  color: white;
+  font-weight: 900;
+}
+
+h1,
+h2 {
+  font-size: 30px;
+  margin: 20px 0;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.content {
+  padding: 30px 3%;
+}
+
+.grid {
+  font-size: 30px;
+  position: relative;
+  margin: 0 0 40px 0;
+}
+
+.grid-body {
+  display: grid;
+  grid-template: repeat(2, 1fr)/repeat(3, 1fr);
+}
+
+.grid-item {
+  text-align: center;
+  border: 2px dashed lightcoral;
+  padding: 30px;
+}
+
+/*размещение элементов с помощью линий сетки*/
+.grid-1 {
+  font-size: 30px;
+  position: relative;
+  margin: 0 0 40px 0;
+}
+
+.grid-body-1 {
+  display: grid;
+  grid-template-rows: [start] 1fr [row2] 1fr [row-end];
+  grid-template-columns: [start] 1fr [col2] 1fr [col3] 1fr [col-end];
+}
+
+.grid-item_1,
+.grid-item_2,
+.grid-item_3,
+.grid-item_4,
+.grid-item_5,
+.grid-item_6 {
+  text-align: center;
+  border: 2px dashed lightcoral;
+  padding: 30px;
+}
+
+.grid-item_1 {
+  /*grid-row: 1/3;
+  grid-column: 1/3;*/
+  order: 5;
+  background-color: lightcoral;
+}
+
+.grid-item_2 {
+  order: 4;
+}
+
+.grid-item_3 {
+  order: 6;
+}
+
+.grid-item_4 {
+  order: 2;
+}
+
+.grid-item_5 {
+  order: 3;
+}
+
+.grid-item_6 {
+  order: 1;
+}
+
+/*Grid layout- элементы сетки*/
+.grid-2 {
+  font-size: 30px;
+  position: relative;
+  margin: 0 0 40px 0;
+}
+
+.grid-body-2 {
+  display: grid;
+  grid-template-rows: [start] 150px [row2] 150px [row-end];
+  grid-template-columns: [start] 1fr [col2] 1fr [col3] 1fr [col-end];
+  row-gap: 20px;
+  column-gap: 20px;
+  gap: 0px;
+  /*   justify-items: start; //горизонтальное выравнивание
+  align-items: end; // вертикальное выравнивание */
+}
+
+.grid2-item_1,
+.grid2-item_2,
+.grid2-item_3,
+.grid2-item_4,
+.grid2-item_5,
+.grid2-item_6 {
+  border: 2px dashed lightcoral;
+  text-align: center;
+  padding: 30px;
+}
+
+.grid2-item_1 {
+  /* margin: auto; //располгаем наш элемент по центру ячейки */
+}
